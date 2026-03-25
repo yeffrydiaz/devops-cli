@@ -1,0 +1,52 @@
+{
+  "name": "devops-cli",
+  "version": "1.0.0",
+  "description": "A command-line interface tool designed to automate repetitive deployment tasks, manage environment variables, and scaffold new microservices.",
+  "main": "src/index.js",
+  "bin": {
+    "devops": "./bin/devops-cli.js"
+  },
+  "scripts": {
+    "start": "node bin/devops-cli.js",
+    "test": "jest --testEnvironment=node",
+    "test:coverage": "jest --testEnvironment=node --coverage",
+    "build": "yao-pkg . --out-path dist"
+  },
+  "pkg": {
+    "scripts": "src/**/*.js",
+    "assets": "templates/**/*",
+    "targets": [
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-win-x64"
+    ],
+    "outputPath": "dist"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "devops",
+    "cli",
+    "deployment",
+    "microservices",
+    "docker"
+  ],
+  "author": "yeffrydiaz",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.14.1",
+    "jest": "^30.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
