@@ -10,7 +10,7 @@
     "start": "node bin/devops-cli.js",
     "test": "jest --testEnvironment=node",
     "test:coverage": "jest --testEnvironment=node --coverage",
-    "build": "yao-pkg . --out-path dist"
+    "build": "pkg . --out-path dist"
   },
   "pkg": {
     "scripts": "src/**/*.js",
